@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,43 +15,35 @@ body{
     color:white;
     padding:30px;
 }
-
 h1{
     text-align:center;
     font-size:42px;
 }
-
 .subtitle{
     text-align:center;
     color:#cbd5e1;
     margin-bottom:30px;
 }
-
 .card{
     background:#1e293b;
     border-radius:18px;
     padding:20px;
     margin-bottom:25px;
 }
-
 h2{
     color:#93c5fd;
 }
-
 ul{
     list-style:none;
     padding:0;
 }
-
 li{
     padding:8px 0;
 }
-
 input[type="checkbox"]{
     transform:scale(1.2);
     margin-right:10px;
 }
-
 .progress-container{
     background:#334155;
     border-radius:999px;
@@ -57,13 +51,11 @@ input[type="checkbox"]{
     height:20px;
     margin:15px 0 25px;
 }
-
 .progress-bar{
     height:100%;
     width:0%;
     background:#60a5fa;
 }
-
 .percent{
     text-align:center;
     color:#cbd5e1;
@@ -85,44 +77,44 @@ input[type="checkbox"]{
 <div class="card">
 <h2>⚕️ Physiology</h2>
 <ul>
-<li><label><input type="checkbox">Skeletal Muscle</label></li>
-<li><label><input type="checkbox">Cardiovascular System</label></li>
-<li><label><input type="checkbox">Urinary System</label></li>
-<li><label><input type="checkbox">Chapter 4</label></li>
-<li><label><input type="checkbox">Chapter 5</label></li>
+<li><label><input type="checkbox">1. Skeletal Muscle</label></li>
+<li><label><input type="checkbox">2. Cardiovascular System</label></li>
+<li><label><input type="checkbox">3. Urinary System</label></li>
+<li><label><input type="checkbox">4. Chapter 4</label></li>
+<li><label><input type="checkbox">5. Chapter 5</label></li>
 </ul>
 </div>
 
 <div class="card">
 <h2>🧪 Organic Chemistry</h2>
 <ul>
-<li><label><input type="checkbox">Chapter 1 — Structure and Bonding</label></li>
-<li><label><input type="checkbox">Chapter 2 — Polar Covalent Bonds, Acids and Bases</label></li>
-<li><label><input type="checkbox">Chapter 3 — Alkanes and Their Stereochemistry</label></li>
-<li><label><input type="checkbox">Chapter 4 — Cycloalkanes and Their Stereochemistry</label></li>
-<li><label><input type="checkbox">Chapter 5 — Stereochemistry and Tetrahedral Centers</label></li>
-<li><label><input type="checkbox">Chapter 6 — Organic Reactions</label></li>
-<li><label><input type="checkbox">Chapter 7 — Alkenes Structure and Reactivity</label></li>
-<li><label><input type="checkbox">Chapter 8 — Alkenes Reactions and Synthesis</label></li>
-<li><label><input type="checkbox">Chapter 9 — Alkynes and Organic Synthesis</label></li>
-<li><label><input type="checkbox">Chapter 10 — Organohalides</label></li>
-<li><label><input type="checkbox">Chapter 11 — Reactions of Alkyl Halides</label></li>
-<li><label><input type="checkbox">Chapter 12 — Structure Determination and Spectroscopy</label></li>
+<li><label><input type="checkbox">1. Structure and Bonding</label></li>
+<li><label><input type="checkbox">2. Polar Covalent Bonds, Acids and Bases</label></li>
+<li><label><input type="checkbox">3. Alkanes and Their Stereochemistry</label></li>
+<li><label><input type="checkbox">4. Cycloalkanes and Their Stereochemistry</label></li>
+<li><label><input type="checkbox">5. Stereochemistry and Tetrahedral Centers</label></li>
+<li><label><input type="checkbox">6. Organic Reactions</label></li>
+<li><label><input type="checkbox">7. Alkenes Structure and Reactivity</label></li>
+<li><label><input type="checkbox">8. Alkenes Reactions and Synthesis</label></li>
+<li><label><input type="checkbox">9. Alkynes and Organic Synthesis</label></li>
+<li><label><input type="checkbox">10. Organohalides</label></li>
+<li><label><input type="checkbox">11. Reactions of Alkyl Halides</label></li>
+<li><label><input type="checkbox">12. Structure Determination and Spectroscopy</label></li>
 </ul>
 </div>
 
 <div class="card">
 <h2>🧫 Analytical Chemistry</h2>
 <ul>
-<li><label><input type="checkbox">Chapter One</label></li>
-<li><label><input type="checkbox">Chapter Two</label></li>
-<li><label><input type="checkbox">Chapter Three</label></li>
-<li><label><input type="checkbox">Chapter Four</label></li>
-<li><label><input type="checkbox">Chapter Five</label></li>
-<li><label><input type="checkbox">Chapter Six</label></li>
-<li><label><input type="checkbox">Chapter Seven</label></li>
-<li><label><input type="checkbox">Chapter Eight</label></li>
-<li><label><input type="checkbox">Chapter Nine</label></li>
+<li><label><input type="checkbox">Chapter 1</label></li>
+<li><label><input type="checkbox">Chapter 2</label></li>
+<li><label><input type="checkbox">Chapter 3</label></li>
+<li><label><input type="checkbox">Chapter 4</label></li>
+<li><label><input type="checkbox">Chapter 5</label></li>
+<li><label><input type="checkbox">Chapter 6</label></li>
+<li><label><input type="checkbox">Chapter 7</label></li>
+<li><label><input type="checkbox">Chapter 8</label></li>
+<li><label><input type="checkbox">Chapter 9</label></li>
 </ul>
 </div>
 
@@ -136,15 +128,11 @@ checkboxes.forEach(box=>{
 });
 
 function updateProgress(){
-
     const total=checkboxes.length;
-
     const checked=document.querySelectorAll('input[type="checkbox"]:checked').length;
-
     const percent=Math.round((checked/total)*100);
 
     progressBar.style.width=percent+"%";
-
     percentText.innerText=percent+"% Completed";
 }
 
@@ -153,3 +141,9 @@ updateProgress();
 
 </body>
 </html>
+"""
+
+path = Path("/mnt/data/serotonin_vault_final.html")
+path.write_text(html, encoding="utf-8")
+
+print("Saved:", path)
