@@ -2,102 +2,154 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Serotonin Patch - Study Hub</title>
-ب
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serotonin Vault</title>
+
 <style>
-  body{
-    font-family: Arial;
-    background: linear-gradient(135deg,#e3f2fd,#fce4ec);
+body{
     margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    font-size:42px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:18px;
     padding:20px;
-  }
+    margin-bottom:25px;
+}
 
-  .container{
-    max-width:800px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
-  }
+h2{
+    color:#93c5fd;
+}
 
-  h1{
-    text-align:center;
-    margin-bottom:5px;
-  }
+ul{
+    list-style:none;
+    padding:0;
+}
 
-  .subtitle{
-    text-align:center;
-    color:gray;
-    margin-bottom:20px;
-  }
+li{
+    padding:8px 0;
+}
 
-  h2{
-    margin-top:25px;
-    border-bottom:1px solid #eee;
-    padding-bottom:5px;
-  }
-
-  .task{
-    margin:8px 0;
-    padding:6px;
-    border-radius:8px;
-  }
-
-  input{
+input[type="checkbox"]{
     transform:scale(1.2);
-    margin-right:8px;
-  }
+    margin-right:10px;
+}
 
-  .tag{
-    display:inline-block;
-    background:#eee;
-    padding:3px 8px;
-    border-radius:10px;
-    font-size:12px;
-    margin-left:5px;
-    color:#555;
-  }
+.progress-container{
+    background:#334155;
+    border-radius:999px;
+    overflow:hidden;
+    height:20px;
+    margin:15px 0 25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#60a5fa;
+}
+
+.percent{
+    text-align:center;
+    color:#cbd5e1;
+}
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
+<h1>🧠 Serotonin Vault</h1>
+<p class="subtitle">Pharmacy Finals Checklist</p>
 
-<h1>🌿 Serotonin Patch</h1>
-<div class="subtitle">Your organized study hub 💫</div>
+<div class="percent" id="percentText">0% Completed</div>
 
-<!-- PHYSIOLOGY -->
-<h2>🫀 Physiology (Final Only)</h2>
-
-<div class="task"><input type="checkbox"> Skeletal Muscle <span class="tag">Topic</span></div>
-<div class="task"><input type="checkbox"> Cardiovascular System <span class="tag">Topic</span></div>
-
-<!-- ORGANIC CHEMISTRY -->
-<h2>🧪 Organic Chemistry</h2>
-
-<div class="task"><input type="checkbox"> Chapter 1: Structure and Bonding</div>
-<div class="task"><input type="checkbox"> Chapter 2: Polar Covalent Bond, Acids & Bases</div>
-<div class="task"><input type="checkbox"> Chapter 3: Organic Compounds & Alkanes</div>
-<div class="task"><input type="checkbox"> Chapter 4: Cycloalkanes & Stereochemistry</div>
-<div class="task"><input type="checkbox"> Chapter 5: Stereochemistry & Tetrahedral Center</div>
-<div class="task"><input type="checkbox"> Chapter 6: Organic Reactions Overview</div>
-<div class="task"><input type="checkbox"> Chapter 7: Alkenes Structure & Reactivity</div>
-<div class="task"><input type="checkbox"> Chapter 8: Alkenes Reactions & Synthesis</div>
-<div class="task"><input type="checkbox"> Chapter 9: Organic Synthesis Intro</div>
-<div class="task"><input type="checkbox"> Chapter 10: Organohalides</div>
-<div class="task"><input type="checkbox"> Chapter 11: Alkyl Halides Reactions</div>
-<div class="task"><input type="checkbox"> Chapter 12: Mass Spectrometry & IR</div>
-
-<!-- ANALYTICAL -->
-<h2>⚗️ Analytical Chemistry</h2>
-
-<div class="task"><input type="checkbox"> Lectures (Dr. system)</div>
-<div class="task"><input type="checkbox"> Chapters (9 chapters system)</div>
-
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
 </div>
+
+<div class="card">
+<h2>⚕️ Physiology</h2>
+<ul>
+<li><label><input type="checkbox">Skeletal Muscle</label></li>
+<li><label><input type="checkbox">Cardiovascular System</label></li>
+<li><label><input type="checkbox">Urinary System</label></li>
+<li><label><input type="checkbox">Chapter 4</label></li>
+<li><label><input type="checkbox">Chapter 5</label></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧪 Organic Chemistry</h2>
+<ul>
+<li><label><input type="checkbox">Chapter 1 — Structure and Bonding</label></li>
+<li><label><input type="checkbox">Chapter 2 — Polar Covalent Bonds, Acids and Bases</label></li>
+<li><label><input type="checkbox">Chapter 3 — Alkanes and Their Stereochemistry</label></li>
+<li><label><input type="checkbox">Chapter 4 — Cycloalkanes and Their Stereochemistry</label></li>
+<li><label><input type="checkbox">Chapter 5 — Stereochemistry and Tetrahedral Centers</label></li>
+<li><label><input type="checkbox">Chapter 6 — Organic Reactions</label></li>
+<li><label><input type="checkbox">Chapter 7 — Alkenes Structure and Reactivity</label></li>
+<li><label><input type="checkbox">Chapter 8 — Alkenes Reactions and Synthesis</label></li>
+<li><label><input type="checkbox">Chapter 9 — Alkynes and Organic Synthesis</label></li>
+<li><label><input type="checkbox">Chapter 10 — Organohalides</label></li>
+<li><label><input type="checkbox">Chapter 11 — Reactions of Alkyl Halides</label></li>
+<li><label><input type="checkbox">Chapter 12 — Structure Determination and Spectroscopy</label></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧫 Analytical Chemistry</h2>
+<ul>
+<li><label><input type="checkbox">Chapter One</label></li>
+<li><label><input type="checkbox">Chapter Two</label></li>
+<li><label><input type="checkbox">Chapter Three</label></li>
+<li><label><input type="checkbox">Chapter Four</label></li>
+<li><label><input type="checkbox">Chapter Five</label></li>
+<li><label><input type="checkbox">Chapter Six</label></li>
+<li><label><input type="checkbox">Chapter Seven</label></li>
+<li><label><input type="checkbox">Chapter Eight</label></li>
+<li><label><input type="checkbox">Chapter Nine</label></li>
+</ul>
+</div>
+
+<script>
+const checkboxes=document.querySelectorAll('input[type="checkbox"]');
+const progressBar=document.getElementById('progressBar');
+const percentText=document.getElementById('percentText');
+
+checkboxes.forEach(box=>{
+    box.addEventListener('change',updateProgress);
+});
+
+function updateProgress(){
+
+    const total=checkboxes.length;
+
+    const checked=document.querySelectorAll('input[type="checkbox"]:checked').length;
+
+    const percent=Math.round((checked/total)*100);
+
+    progressBar.style.width=percent+"%";
+
+    percentText.innerText=percent+"% Completed";
+}
+
+updateProgress();
+</script>
 
 </body>
 </html>
